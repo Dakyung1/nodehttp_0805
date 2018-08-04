@@ -121,7 +121,7 @@ File System 모듈을 사용해 서버에 존재하는 html페이지를 클라�
 Set-Cookie 속성 : Name = Value; Expires = 날짜; Domain = 도메인; Path = 경로; Secure<br>
 [예제](./node0802/쿠키.js) <br>
 
-##6.3.4 페이지 강제 이동
+## 6.3.4 페이지 강제 이동
 Location 속성 사용<br>
 [예제](./node0802/강제.js) <br>
 
@@ -137,7 +137,7 @@ Location 속성 사용<br>
 
 [예제](./node0802/404.js) <br>
 
-##6.4 request객체
+## 6.4 request객체
 -request 객체의 속성<br>
 
 |속성 이름|설명|
@@ -148,21 +148,21 @@ Location 속성 사용<br>
 |trailers|요청 메시지 트레일러를 나타냄|<br>
 |httpVersion|HTTP 프로토콜 버전을 나타냄|<br>
 
-##6.4.1 URL속성을 사용한 페이지 구분
+## 6.4.1 URL속성을 사용한 페이지 구분
 요청 메시지의 url에 따라 서로 다른 웹페이지를 제공한다. <br>
 url모듈을 사용해 pathname을 추출하고 조건물을 사용해 페이지 구분한다.<br>
 [예제](./node0802/app.js) <br>
 
-##6.4.2 method 속성을 사용한 페이지 구분
+## 6.4.2 method 속성을 사용한 페이지 구분
 request의 mehod속성을 사용하면 GET/POST 구분이 가능하다.<br>
 [예제](./node0802/구분.js) <br>
 이건 GET방식으로  요청 받았을 경우 매개변수를 추출하는 방법<br>
 
-##6.4.4 POST 요청 매개변수 추출
+## 6.4.4 POST 요청 매개변수 추출
 POST 방식은 데이터를 더 많이 담을 수 있고 보안 측면에서도 더 좋다.<br>
 [예제](./node0802/request.post.js) <br>
 
-##쿠키 추출
+## 쿠키 추출
 쿠키는 request 객체의 headers 속성 안 cookies 속성에서 추출할 수 있다.</br>
 [예제](./node0802/쿠키추출.js) <br>
 [예제](./node0802/쿠키분해.js) <br>
