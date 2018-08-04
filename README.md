@@ -124,7 +124,9 @@ Set-Cookie 속성 : Name = Value; Expires = 날짜; Domain = 도메인; Path = �
 ##6.3.4 페이지 강제 이동
 Location 속성 사용<br>
 [예제](./node0802/강제.js) <br>
+
 -HTTP Status Code 예<br>
+
 |HTTP Status Code|설명|예|<br>
 |--|--|--|<br>
 |1xx|처리 중|100 Continue|<br>
@@ -136,7 +138,8 @@ Location 속성 사용<br>
 [예제](./node0802/404.js) <br>
 
 ##6.4 request객체
--request 객체의 속성
+-request 객체의 속성<br>
+
 |속성 이름|설명|
 |--|--|
 |method|클라이언트의 요청 방식을 나타냄|<br>
