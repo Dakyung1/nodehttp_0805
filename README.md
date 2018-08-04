@@ -39,9 +39,9 @@ var server = http.createServer();
 server.listen(52273);
 </code>
 </pre><br>
-(./node0805/server객체.js)<br>
+[예제](./node0805/server객체.js)<br>
 
-###server 객체의 메서드
+-server 객체의 메서드<br>>
 
 |메서드 이름|설명|
 |--|--|
@@ -65,10 +65,11 @@ setTimeout(test,10000);
 </code>
 </pre>
 
-###server 객체의 이벤트
+##server 객체의 이벤트
 server객체에서 중요한 것은 메서드보다 이벤트.<br>
 EventEmitter 객체를 기반으로 만들어졌으므로 이벤트를 연결할 수 있다.<br>
--자주 사용하는 server객체 이벤트
+
+-자주 사용하는 server객체 이벤트<br>
 
 |이벤트 이름|설명|
 |--|--|
@@ -79,21 +80,84 @@ EventEmitter 객체를 기반으로 만들어졌으므로 이벤트를 연결할
 |upgrade|클라이언트가 HTTP 업그레이드 요청할 때 발생|<br>
 |clientError|클라이언트에서 오류가 발생할 때 발생|<br>
 
-[이벤트 예제](./node0802/server이벤트.js) <br>
+[예제](./node0802/server이벤트.js) <br>
 
 ## 6.3 response 객체
+-response 객체의 메서드 <br>
+|메서드 이름|설명|
+|--|--|
+|writeHead(statusCode[, statusMessage][, headers])|응답 헤더를 작성|<br>
+|end([data][,encoding][, callback])|응답 본문을 작성|<br>
 
-[이벤트제거 예제](./5.event/이벤트제거.js) <br>
-[이벤트를 한번만 연결하고 싶은 경우](./5.event/once.js)
+[예제](./node0802/response객체간단.js) <br>
 
-## 5.4 이벤트 강제 발생
-<pre><code>emit(eventName[,arg1][...]) : emit 메서드는 이벤트를 강제로 발생시킴
-하지만 이벤트 리스너만 실행됨.</code>
-</pre>
-[이벤트 강제 발생 예제](./5.event/이벤트강제발생.js)
+## 6.3.1 File System 모듈을 사용한 HTML 페이지 제공
+File System 모듈을 사용해 서버에 존재하는 html페이지를 클라이언트에게 제공<br>
+[예제](./node0802/file사용.js) <br>
 
-## 5.5 이벤트 생성
-``` 이벤트를 연결할 수 있는 모든 객체는 EventEmitter 객체의 상속을 받는다. 
-EventEmitter 객체는 events 모듈안에 있음. process객체에도 있음.
-```
-[이벤트 생성 예제](./5.event/이벤트생성.js)
+## 6.3.2 이미지와 음악 파일 제공
+이미지, 음악, 동영상 파일도 다운로드 가능하다.
+[예제](./node0802/이미지제공.js) <br>
+-MIME형식의 예시 <br>
+|Content Type|설명|
+|--|--|
+|text/plain|기본적인 텍스트|<br>
+|text/html|HTML 문서|<br>
+|text/css|CSS 문서|<br>
+|text/xml|XML 문서|<br>
+|image/jpeg|JPG/JPEG 그림 파일|<br>
+|image/png|PNG 그림 파일|<br>
+|video/mpeg|MPEG 비디오 파일|<br>
+|audio/mp3|MP3 음악파일|<br>
+
+## 6.3.3 쿠키 생성
+쿠키: 키와 값이 들어 있는 작은 데이터 조각 - 이름, 값, 파기 날짜, 경로 정보<br>
+-쿠키는 서버와 클라이언트에서 모두 저장하고 사용 가능<br>
+-일정 기간 동안 데이터를 저장 가능 ->페이스북 등에서 로그인 상태 일정 시간 동안 유지 가능하다.<br>
+
+-response 객체를 사용하면 클라이언트에 쿠키를 할당 가능하다 ->Set-Cookie 속성을 사용한다.<br>
+Set-Cookie 속성 : Name = Value; Expires = 날짜; Domain = 도메인; Path = 경로; Secure<br>
+[예제](./node0802/쿠키.js) <br>
+
+##6.3.4 페이지 강제 이동
+Location 속성 사용<br>
+[예제](./node0802/강제.js) <br>
+-HTTP Status Code 예<br>
+|HTTP Status Code|설명|예|<br>
+|--|--|--|<br>
+|1xx|처리 중|100 Continue|<br>
+|2xx|성공|200 OK|<br>
+|3xx|리다이렉트|300 Multiple Choices|<br>
+|4xx|클라이언트 오류|400 Bad Request|<br>
+|5xx|서버 오류|500 Internal Server Error|<br>
+
+[예제](./node0802/404.js) <br>
+
+##6.4 request객체
+-request 객체의 속성
+|속성 이름|설명|
+|--|--|
+|method|클라이언트의 요청 방식을 나타냄|<br>
+|url|클라이언트가 요청한 URL을 나타냄|<br>
+|headers|요청 메시지 헤더를 나타냄|<br>
+|trailers|요청 메시지 트레일러를 나타냄|<br>
+|httpVersion|HTTP 프로토콜 버전을 나타냄|<br>
+
+##6.4.1 URL속성을 사용한 페이지 구분
+요청 메시지의 url에 따라 서로 다른 웹페이지를 제공한다. <br>
+url모듈을 사용해 pathname을 추출하고 조건물을 사용해 페이지 구분한다.<br>
+[예제](./node0802/app.js) <br>
+
+##6.4.2 method 속성을 사용한 페이지 구분
+request의 mehod속성을 사용하면 GET/POST 구분이 가능하다.<br>
+[예제](./node0802/구분.js) <br>
+이건 GET방식으로  요청 받았을 경우 매개변수를 추출하는 방법<br>
+
+##6.4.4 POST 요청 매개변수 추출
+POST 방식은 데이터를 더 많이 담을 수 있고 보안 측면에서도 더 좋다.<br>
+[예제](./node0802/request.post.js) <br>
+
+##쿠키 추출
+쿠키는 request 객체의 headers 속성 안 cookies 속성에서 추출할 수 있다.</br>
+[예제](./node0802/쿠키추출.js) <br>
+[예제](./node0802/쿠키분해.js) <br>
