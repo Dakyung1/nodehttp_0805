@@ -84,6 +84,7 @@ EventEmitter 객체를 기반으로 만들어졌으므로 이벤트를 연결할
 
 ## 6.3 response 객체
 -response 객체의 메서드 <br>
+
 |메서드 이름|설명|
 |--|--|
 |writeHead(statusCode[, statusMessage][, headers])|응답 헤더를 작성|<br>
@@ -99,6 +100,7 @@ File System 모듈을 사용해 서버에 존재하는 html페이지를 클라�
 이미지, 음악, 동영상 파일도 다운로드 가능하다.
 [예제](./node0802/이미지제공.js) <br>
 -MIME형식의 예시 <br>
+
 |Content Type|설명|
 |--|--|
 |text/plain|기본적인 텍스트|<br>
