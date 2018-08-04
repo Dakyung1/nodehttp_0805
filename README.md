@@ -68,7 +68,8 @@ setTimeout(test,10000);
 ###server 객체의 이벤트
 server객체에서 중요한 것은 메서드보다 이벤트.<br>
 EventEmitter 객체를 기반으로 만들어졌으므로 이벤트를 연결할 수 있다.<br>
--자주 사용하는 server객체 이벤트<br>
+-자주 사용하는 server객체 이벤트
+
 |이벤트 이름|설명|
 |--|--|
 |request|클라이언트가 요청할 때 발생|<br>
@@ -78,10 +79,10 @@ EventEmitter 객체를 기반으로 만들어졌으므로 이벤트를 연결할
 |upgrade|클라이언트가 HTTP 업그레이드 요청할 때 발생|<br>
 |clientError|클라이언트에서 오류가 발생할 때 발생|<br>
 
-## 6.3
-<pre><code>removeListener(eventName, handler) : 특정 이벤트의 리스너를 제거
-removeAllListeners(eventName) : 모든 이벤트 리스너를 제거 </code>
-</pre>
+[이벤트 예제](./node0802/server이벤트.js) <br>
+
+## 6.3 response 객체
+
 [이벤트제거 예제](./5.event/이벤트제거.js) <br>
 [이벤트를 한번만 연결하고 싶은 경우](./5.event/once.js)
 
