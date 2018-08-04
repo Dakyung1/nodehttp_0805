@@ -38,14 +38,42 @@ var server = http.createServer();
 //웹 서버를 실행합니다.
 server.listen(52273);
 </code>
-</pre>
-(./server객체.js)<br>
+</pre><br>
+(./node0805/server객체.js)<br>
 
-#server 객체의 메서드
-|listen(port[, callback]))|서버 실행|
+###server 객체의 메서드
+|listen(port[, callback]))|서버 실행|<br>
 |close([callback])|서버 종료|
+<pre>
+<code>
+//서버 생성
+var server = require('http').createServer();
+//서버 실행
+server.listen(52273, funtion(){
+    console.log('Server Running at http://127.0.0.1:52273');
+});
 
-## 5.3 이벤트 제거
+//10초 후 함수 실행
+var test - function(){
+    //서버 종료
+    server.close();
+};
+setTimeout(test,10000);
+</code>
+</pre>
+
+###server 객체의 이벤트
+server객체에서 중요한 것은 메서드보다 이벤트.<br>
+EventEmitter 객체를 기반으로 만들어졌으므로 이벤트를 연결할 수 있다.<br>
+-자주 사용하는 server객체 이벤트<br>
+|request|클라이언트가 요청할 때 발생|<br>
+|connection|클라이언트가 접속할 때 발생|<br>
+|close|서버가 종료될 때 발생|<br>
+|checkContinue|클라이언트가 지속적인 연결하고 있을 때 발생|<br>
+|upgrade|클라이언트가 HTTP 업그레이드 요청할 때 발생|<br>
+|clientError|클라이언트에서 오류가 발생할 때 발생|<br>
+
+## 6.3
 <pre><code>removeListener(eventName, handler) : 특정 이벤트의 리스너를 제거
 removeAllListeners(eventName) : 모든 이벤트 리스너를 제거 </code>
 </pre>
