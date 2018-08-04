@@ -42,6 +42,9 @@ server.listen(52273);
 (./node0805/server객체.js)<br>
 
 ###server 객체의 메서드
+
+|메서드 이름|설명|
+|--|--|
 |listen(port[, callback]))|서버 실행|<br>
 |close([callback])|서버 종료|
 <pre>
@@ -66,6 +69,8 @@ setTimeout(test,10000);
 server객체에서 중요한 것은 메서드보다 이벤트.<br>
 EventEmitter 객체를 기반으로 만들어졌으므로 이벤트를 연결할 수 있다.<br>
 -자주 사용하는 server객체 이벤트<br>
+|이벤트 이름|설명|
+|--|--|
 |request|클라이언트가 요청할 때 발생|<br>
 |connection|클라이언트가 접속할 때 발생|<br>
 |close|서버가 종료될 때 발생|<br>
