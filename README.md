@@ -127,7 +127,7 @@ Location 속성 사용<br>
 -HTTP Status Code 예<br>
 
 |HTTP Status Code|설명|예|<br>
-|--|--|--|<br>
+|--|:--|:--|<br>
 |1xx|처리 중|100 Continue|<br>
 |2xx|성공|200 OK|<br>
 |3xx|리다이렉트|300 Multiple Choices|<br>
