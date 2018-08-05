@@ -8,7 +8,7 @@ http.createServer(function (request, response){
 
     //SET 쿠키
     response.writeHead(200, {
-        'Content-Type' : 'texy/html',
+        'Content-Type' : 'text/html',
         'Set-Cookie' : ['name = RintIanTta', 'region = Seoul']
     });
 

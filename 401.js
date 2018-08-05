@@ -4,7 +4,7 @@ var http = require('http');
 //웹서버를 생성하고 실행
 http.createServer(function (request, response){
     response.writeHead(404);
-    reoibse.end();
+    response.end();
 }).listen(52273, function(){
     console.log('server running');
 });

@@ -4,13 +4,13 @@ var http = require('http');
 //웹서버를 생성하고 실행
 http.createServer(function (request, response){
     //변수선언
-    var data = new DataCue();
-    data.setData(data.getData()+7);
+    var date = new Date();
+    date.setDate(date.getDate()+7);
 
     //쿠키 입력
    response.writeHead(200,{
        'content-type':'text.html',
-       'Set-Cookie' : ['breakfast = toast;Expires = '+data.toUTCString(),
+       'Set-Cookie' : ['breakfast = toast;Expires = '+date.toUTCString(),
         'dinner = chicken']
     });
 

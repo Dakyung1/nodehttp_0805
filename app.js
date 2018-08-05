@@ -15,7 +15,7 @@ http.createServer(function (request, response){
             response.writeHead(200, { 'Content-TYpe':'text/html'});
             response.end(data);
         });
-    }else if(pathname == '/ohterpage'){
+    }else if(pathname == '/otherpage'){
         //otherpage 읽기
         fs.readFile('otherpage.html', function(error, data){
             //응답

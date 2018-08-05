@@ -2,7 +2,7 @@
 var http = require('http');
 
 //웹서버를 생성하고 실행
-http.craeteServer(function (request, response){
+http.createServer(function (request, response){
     if(request.method == 'GET'){
         console.log('get입니다');
     }else if(request.method =='POST'){

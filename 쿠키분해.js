@@ -19,7 +19,7 @@ http.createServer(function (request, response){
     }else{
         //쿠키 생성
         response.writeHead(200, {
-            'Content-Type' : 'texy/html',
+            'Content-Type' : 'text/html',
             'Set-Cookie' : ['name = RintIanTta', 'region = Seoul']
         });
 
